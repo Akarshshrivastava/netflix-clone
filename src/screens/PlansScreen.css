@@ -1,0 +1,30 @@
+.plansScreen_plans{
+    margin: 20px 0;
+}
+
+.plansScreen_plan{
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    justify-content: space-between;
+}
+.plansScreen_plan .plansScreen_btn{
+    width: 120px;
+    font-size: 16px;
+}
+.plansScreen_plan .plansScreen_btn.selected{
+    width: 120px;
+    font-size: 16px;
+    background: gray;
+}
+.plansScreen_info{
+    padding: 4px 0;
+}
+.plansScreen_info h5{
+    font-weight: 400;
+    font-size: 20px;
+}
+.plansScreen_info h6{
+    font-size: 16px;
+    font-weight: lighter;
+}

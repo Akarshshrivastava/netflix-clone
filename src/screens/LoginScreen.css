@@ -1,0 +1,162 @@
+.loginScreen {
+  position: relative;
+  min-height: 100vh;
+  background: url("../assets/netflix-banner.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+.loginScreen_logo {
+  position: fixed;
+  left: 20px;
+  width: 160px;
+  cursor: pointer;
+  z-index: 2;
+  object-fit: contain;
+}
+.loginScreen_btn {
+  z-index: 10;
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  padding: 12px 28px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  background: #ff0000;
+  color: white;
+}
+.loginScreen_fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.5) 0,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 1;
+}
+.loginScreen_body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  color: white;
+}
+.loginScreen_body .loginScreen_title {
+  font-size: 48px;
+  width: 60%;
+  text-align: center;
+}
+.loginScreen_body > h2 {
+  margin: 10px 0;
+  font-weight: 400;
+  font-size: 26px;
+  text-align: center;
+}
+.loginScreen_body h3 {
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+}
+.loginScreen_input {
+  width: 680px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+}
+.loginScreen_input form {
+  display: flex;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .loginScreen_input form {
+    flex-direction: column;
+    width: 400px;
+  }
+  .loginScreen_input {
+    margin: 16px 0;
+    width: 480px;
+  }
+  .loginScreen_input form input {
+    margin: 10px 0;
+  }
+  .loginScreen_body .loginScreen_title {
+    font-size: 36px;
+    width: 80%;
+  }
+  .loginScreen_body h3 {
+    font-size: 20px;
+    width: 90%;
+  }
+}
+@media (max-width:576px){
+  .loginScreen_logo{
+    width: 140px;
+  }
+  .loginScreen_btn{
+    top: 24px;
+  padding: 8px 24px;
+
+  }
+  .loginScreen_body .loginScreen_title {
+    font-size: 28px;
+    width: 80%;
+  }
+  .loginScreen_input {
+    width: 240px;
+  }
+  .loginScreen_body > h2 {
+    font-size: 22px;
+    width: 80%;
+  }
+  .loginScreen_body h3 {
+    font-size: 18px;
+    width: 80%;
+  }
+}
+.loginScreen_input input {
+  width: 100%;
+  padding: 14px 28px 14px 8px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  font-weight: lighter;
+  font-size: 16px;
+  margin: 0 10px;
+  color: white;
+}
+
+.loginScreen_input .loginScreen_getStartedbtn {
+  outline: none;
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: pointer;
+  background: #ff0000;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 2px;
+  width: 180px;
+}
+@media (max-width:576px){
+  .loginScreen_input .loginScreen_getStartedbtn {
+    width: 100%;
+  } 
+}
