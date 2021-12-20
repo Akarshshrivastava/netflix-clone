@@ -13,7 +13,6 @@ const SignUpScreen = () => {
     await createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log("registered");
-        console.log(userCredential);
       })
       .catch((error) => {
         alert(error.code);
@@ -24,7 +23,6 @@ const SignUpScreen = () => {
     await signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log("signed in");
-        console.log(userCredential);
       })
       .catch((error) => {
         alert(error.code);

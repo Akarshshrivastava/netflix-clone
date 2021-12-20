@@ -6,6 +6,9 @@
   /* margin-top: 12vh; */
   color: white;
 }
+.video_player {
+  margin-top: 70vh;
+}
 .banner_contents {
   position: absolute;
   top: 30%;
@@ -22,6 +25,10 @@
 @media (max-width: 576px) {
   .banner_contents {
     left: 3%;
+    width: 90%;
+  }
+  .banner_description {
+    width: 100% !important;
   }
 }
 .banner_title {
@@ -55,7 +62,7 @@
   font-size: 1.2rem;
   z-index: 5;
   font-weight: 400;
-  width: 56vw;
+  width: 60%;
   height: auto;
   overflow-wrap: break-word;
 }

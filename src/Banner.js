@@ -71,7 +71,7 @@ const Banner = () => {
         </h2>
       </div>
       <div className="banner_fadeBottom"></div>
-      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+      {trailerUrl && <YouTube className="video_player" videoId={trailerUrl} opts={opts} />}
     </div>
   );
 };
