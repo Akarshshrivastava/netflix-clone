@@ -2,12 +2,35 @@ import axios from "./axios";
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
 import requests from "./request";
+import movieTrailer from "movie-trailer";
+import YouTube from "react-youtube";
 
 const Banner = () => {
-  const print = () => {
-    console.log("hi");
-  }
+  const [trailerUrl, setTrailerUrl] = useState("");
   const [movie, setMovie] = useState([]);
+
+  const handleClick = (movie) => {
+    if (trailerUrl) {
+      setTrailerUrl("");
+    } else {
+      movieTrailer(movie?.name || movie?.title || movie?.original_name)
+        .then((url) => {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          setTrailerUrl(urlParams.get("v"));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  };
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.fetchNetflixOriginals);
@@ -34,16 +57,21 @@ const Banner = () => {
       }}
     >
       <div className="banner_contents">
-        <h1 className="banner_title">{movie?.name || movie?.title || movie?.original_name}</h1>
+        <h1 className="banner_title">
+          {movie?.name || movie?.title || movie?.original_name}
+        </h1>
         <div className="banner_buttons">
-          <button onClick={print}className="banner_button">Play</button>
+          <button onClick={() => handleClick(movie)} className="banner_button">
+            Play
+          </button>
           <button className="banner_button">My List</button>
         </div>
         <h2 className="banner_description">
-          {truncate(`${movie.overview}`,200)}
+          {truncate(`${movie.overview}`, 200)}
         </h2>
       </div>
       <div className="banner_fadeBottom"></div>
+      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </div>
   );
 };
