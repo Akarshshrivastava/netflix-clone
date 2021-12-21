@@ -96,6 +96,7 @@
   }
   .loginScreen_input form input {
     margin: 10px 0;
+    color: black;
   }
   .loginScreen_body .loginScreen_title {
     font-size: 36px;
